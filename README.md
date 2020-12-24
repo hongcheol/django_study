@@ -1,8 +1,8 @@
 # four_artist
 
-version-control : github\n
-database : MySQL\n
-Back-end : Django\n
-Front-end : React\n
+#version-control : github
+#database : MySQL
+#Back-end : Django
+#Front-end : React
 
 Detail
