@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bookmark.apps.BookmarkConfid' #my_bookmark_app
+    'bookmark.apps.BookmarkConfig' #my_bookmark_app
 ]
 
 MIDDLEWARE = [

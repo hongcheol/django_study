@@ -16,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from bookmark.views import BookmarkLV, BookmarkDV #뷰 모듈과 관련된 클래스를 임포트
+#from bookmark.view import * 와 같이 일괄처리도 가능
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #class-based views
+    path('bookmark/',BookmarkLV.as_view(),name='index'),
+    path('bookmark/<int:pk>/',BookmarkDV.as_view(),name='detail'),
 ]
