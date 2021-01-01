@@ -1,6 +1,6 @@
 # four_artist
 
-doc : https://www.notion.so/SNS-4rtist-2475a108769a4c1698886a2a7b562fc1
+프로젝트 소개 : https://www.notion.so/SNS-4rtist-2475a108769a4c1698886a2a7b562fc1
 
 
 version-control : github
