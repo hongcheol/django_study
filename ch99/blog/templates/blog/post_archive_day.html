@@ -1,3 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}post_archive_day.html{% endblock %}
+
+{% block content %}
+
 <h1>Work in {{ month|date:"N d, Y"}}</h1>
 
 <div>
@@ -10,3 +16,5 @@
     </ul>
 </div>
 
+
+{% endblock %}

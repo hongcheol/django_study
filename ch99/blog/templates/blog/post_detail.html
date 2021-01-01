@@ -1,15 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}post_detail.html{% endblock %}
+
+{% block content %}
 <h2>{{object.title}}</h2>
 
 <p>
-    {% if object.get_previous %}
+    {% if object.get_next %}
     <a href="{{object.get_previous.get_absolute_url }}" title = "View previous post">
-        &laquo;--
+        <i class = "fas fa-arrow-circle-left"></i> {{ object.get_next}}
     </a>
     {% endif %}
 
-    {% if object.get_next %}
+    {% if object.get_previous %}
     |<a href = "{{object.get_next.get_absolute_url }}" title = "View Next post">
-        {{object.get_next}} --&raquo;
+        {{object.get_previous}} <i class = "fas fa-arrow-circle-right"></i>
     </a>
     {% endif %}
 </p>
@@ -21,3 +26,4 @@
     {{ object.content|linebreaks }}
 </div>
 
+{% endblock %}
