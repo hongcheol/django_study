@@ -1,8 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}post_archive_year.html{% endblock %}
+
+{% block content %}
 <h1>Work in {{ year|date:"Y"}}</h1>
 <ul>
     {% for date in date_list %}
     <li style="display: inline;">
-        <a href="{% url 'blog:post_month_archive' date|date:'Y' date|date:'b' %}">{{date|date:"F"}}'s work }}</a>
+        <a href="{% url 'blog:post_month_archive' date|date:'Y' date|date:'b' %}"
+        class = "btn-outline-primary btn-sm mx-1">
+        {{date|date:"F"}}'s work }}</a>
     </li>
     {% endfor %}
 </ul>
@@ -17,4 +24,6 @@
         {% endfor %}
     </ul>
 </div>
+
+{% endblock %}
 
