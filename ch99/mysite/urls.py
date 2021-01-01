@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
+from mysite.views import HomeView
 #다음은 APP_URLCONF로 이동
 #from bookmark.views import BookmarkLV, BookmarkDV #뷰 모듈과 관련된 클래스를 임포트
 #from bookmark.view import * 와 같이 일괄처리도 가능
@@ -23,6 +23,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
+    path('',HomeView.as_view(),name='home'),
     path('bookmark/',include('bookmark.urls')),
     path('blog/',include('blog.urls')),
     
