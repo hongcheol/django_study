@@ -126,4 +126,8 @@ STATICFILES_DIRS = [BASE_DIR,'static'] # 추가한 부붙임
 MEDIA_URL = '/media/'
 MEDIA_ROOT = [BASE_DIR,'media']
 
+TAGGIT_CASE_INSENSITIVE = True
+TAGGIT_LIMIT = 50
 
+DISQUS_SHORTNAME = 'pydjango-web-programming'
+DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000'
