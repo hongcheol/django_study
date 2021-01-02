@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse_lazy #make url pattern
+from taggit.managers import TaggableManager
 
 # Create your models here.
 
@@ -10,6 +11,7 @@ class Post(models.Model):
     content = models.TextField('CONTENT')
     create_dt = models.DateTimeField('CREATE DATE',auto_now_add = True)
     modify_dt = models.DateTimeField('MODIFY DATE',auto_now=True)
+    tags = TaggableManager(blank = True)
 
     class Meta: # 필드 속성외에 필요한 파라미터 있으면 여기에 선언하기
         verbose_name = 'post'#table name

@@ -10,4 +10,8 @@ class PostAdmin(admin.ModelAdmin):#admin page에서 보여줄 항목 설정
     search_fields = ('title','content') # 검색박스를 표시해서 입력된 단어는 title과 content 칼럼에서 검색하라는 의미
     prepoulated_fields = {'slug' : ('title',)} # title 필드를 이용해서 미리 채워지도록한다.
 
+    def get_queryset(self,request):
+        return super().get_queryset(request).prefetch_related('tags')
+    def tag_list(self, obj):
+        return ', '.join(o.name for o in obj.tags.all())
 
