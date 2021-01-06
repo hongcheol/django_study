@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig', #my_artist_profile
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
+<<<<<<< HEAD
     'photo.apps.PhotoConfig',
+=======
+>>>>>>> 31ad7d7d96a27d83046b2e376bb70700aaf48c9d
 ]
 
 MIDDLEWARE = [
