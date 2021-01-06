@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+
 from mysite.views import HomeView
 #다음은 APP_URLCONF로 이동
 #from bookmark.views import BookmarkLV, BookmarkDV #뷰 모듈과 관련된 클래스를 임포트
@@ -26,9 +29,9 @@ urlpatterns = [
     path('',HomeView.as_view(),name='home'),
     path('bookmark/',include('bookmark.urls')),
     path('blog/',include('blog.urls')),
-    
+    path('photo/',include('photo.urls'))
     #move to APP_URLCONF
     #class-based views
     #path('bookmark/',BookmarkLV.as_view(),name='index'),
     #path('bookmark/<int:pk>/',BookmarkDV.as_view(),name='detail'),
-]
+]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

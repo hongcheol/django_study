@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'bookmark.apps.BookmarkConfig', #my_bookmark_app
     'blog.apps.BlogConfig', #my_artist_profile
+    'taggit.apps.TaggitAppConfig',
+    'taggit_templatetags2',
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [
