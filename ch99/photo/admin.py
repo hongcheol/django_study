@@ -3,7 +3,7 @@ from photo.models import Album,Photo
 # Register your models here.
 class PhotoInline(admin.StackedInline):
     model = Photo
-    extra = 5
+    extra = 2
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -41,11 +41,9 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig', #my_bookmark_app
     'blog.apps.BlogConfig', #my_artist_profile
     'taggit.apps.TaggitAppConfig',
-    'taggit_templatetags2',
-<<<<<<< HEAD
     'photo.apps.PhotoConfig',
-=======
->>>>>>> 31ad7d7d96a27d83046b2e376bb70700aaf48c9d
+    'taggit_templatetags2',
+
 ]
 
 MIDDLEWARE = [
@@ -131,7 +129,7 @@ STATICFILES_DIRS = [BASE_DIR,'static'] # 추가한 부붙임
 
 #미디어 관련한 부분 파일 업로드 기능을 개발할 때 사용할 예정입니다.
 MEDIA_URL = '/media/'
-MEDIA_ROOT = [BASE_DIR,'media']
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
