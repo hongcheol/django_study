@@ -37,12 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'sorl.thumbnail',
+    
     'bookmark.apps.BookmarkConfig', #my_bookmark_app
     'blog.apps.BlogConfig', #my_artist_profile
     'taggit.apps.TaggitAppConfig',
     'photo.apps.PhotoConfig',
     'taggit_templatetags2',
+    'widget_tweaks',
 
 ]
 
@@ -131,6 +133,8 @@ STATICFILES_DIRS = [BASE_DIR,'static'] # 추가한 부붙임
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
+#LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 TAGGIT_CASE_INSENSITIVE = True
 TAGGIT_LIMIT = 50
 

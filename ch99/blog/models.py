@@ -1,7 +1,8 @@
 from django.db import models
 from django.urls import reverse_lazy #make url pattern
 from taggit.managers import TaggableManager
-
+from django.contrib.auth.models import User
+from django.utils.text import slugify
 # Create your models here.
 
 class Post(models.Model):
@@ -12,6 +13,7 @@ class Post(models.Model):
     create_dt = models.DateTimeField('CREATE DATE',auto_now_add = True)
     modify_dt = models.DateTimeField('MODIFY DATE',auto_now=True)
     tags = TaggableManager(blank = True)
+    owner = models.ForeignKey(User,on_delete=models.CASCADE,verbose_name='OWNER',blank=True,null = True)
 
     class Meta: # 필드 속성외에 필요한 파라미터 있으면 여기에 선언하기
         verbose_name = 'post'#table name
@@ -31,3 +33,6 @@ class Post(models.Model):
     def get_next(self):
         return self.get_next_by_modify_dt()
 
+    def save(self,*args,**kwargs):
+        self.slug = slugify(self.title,allow_unicode=True)
+        super().save(*args,**kwargs)
