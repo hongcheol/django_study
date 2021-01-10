@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from django.conf.urls.static import static
-from django.conf import settings
+#from django.conf.urls.static import static
+#from django.conf import settings
 from mysite.views import UserCreateView, UserCreateDoneTV
 
 from mysite.views import HomeView
@@ -39,4 +39,4 @@ urlpatterns = [
     #class-based views
     #path('bookmark/',BookmarkLV.as_view(),name='index'),
     #path('bookmark/<int:pk>/',BookmarkDV.as_view(),name='detail'),
-]+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+]#+ static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
